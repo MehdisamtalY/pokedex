@@ -10,9 +10,10 @@ const pokemonList  = [
   
 ];
 
-function PokemonCard() {
+function PokemonCard({pokemon}) {
+   
 
-const pokemon = pokemonList[0];
+const pokemon = { name: "mew" };
 
   return (
     <div className="pokemon-card">
