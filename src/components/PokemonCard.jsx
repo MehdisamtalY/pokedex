@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
 const pokemonList  = [
   {
@@ -9,6 +10,17 @@ const pokemonList  = [
     name: 'Bulbasaur',
     imgSrc: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
   },
+  {
+    name: "charmander",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  },
+  {
+    name: "squirtle",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  },
+
   
 ];
 
@@ -32,6 +44,8 @@ PokemonCard.propTypes = {
     imgSrc: PropTypes.string,
   }).isRequired,
 };
+
+// test micro
 
 export default PokemonCard;
 

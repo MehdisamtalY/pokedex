@@ -16,17 +16,38 @@ const pokemonList  = [
   
 ];
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+
+      const handleClick = (event) => {
+      console.log(event.target)
+
+      return (
+        <div>
+          <button onClick={handlePrevious} disabled={pokemonIndex === 0}>Précédent</button>
+          <button onClick={handleNext} disabled={pokemonIndex === pokemonList.length - 1}>Suivant</button>
+        </div>
+      );
+      
+    }
+
+    const handlePrevious = () => {
+      setPokemonIndex((prevIndex) => prevIndex - 1);
+    };
+    
+    const handleNext = () => {
+      setPokemonIndex((prevIndex) => prevIndex + 1);
+    };
+   
+  
 
   return (
-    <>
-      <div>
-         <PokemonCard pokemon={pokemonList[1]} />
-      </div>
-  
-    </>
-  )
+    <PokemonCard pokemon = {pokemonList[1]} />
+  );
 }
 
-export default App
+
+export default App;
+
+
