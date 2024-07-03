@@ -1,33 +1,39 @@
 function NavBar(props) {
+ 
+  const { pokemonList, setPokemonIndex } = props 
+  const handleClick = () => {
+    setPokemonIndex(0)
+  }
+// const handlePrevClick = () => {
+//     props.setPokemonIndex((prevIndex) => (prevIndex === 0 ? props.pokemonList.length - 1 : prevIndex - 1));
+//   };
 
-const handlePrevClick = () => {
-    props.setPokemonIndex((prevIndex) => (prevIndex === 0 ? props.pokemonList.length - 1 : prevIndex - 1));
-  };
 
+//   const handleNextClick = () => {
+//     props.setPokemonIndex((prevIndex) => (prevIndex === props.pokemonList.length - 1 ? 0 : prevIndex + 1));
+//   };
 
-  const handleNextClick = () => {
-    props.setPokemonIndex((prevIndex) => (prevIndex === props.pokemonList.length - 1 ? 0 : prevIndex + 1));
-  };
-
-  let button; let button2;
-  if ((props.pokemonIndex) < props.pokemonList.length -1) {
-    button = <button onClick={handleNextClick}>Suivant </button>
-    if ((props.pokemonIndex) != 0){
-       button2 =<button onClick={handlePrevClick}>Précédent</button>
-      }
+//   let button; let button2;
+//   if ((props.pokemonIndex) < props.pokemonList.length -1) {
+//     button = <button onClick={handleNextClick}>Suivant </button>
+//     if ((props.pokemonIndex) != 0){
+//        button2 =<button onClick={handlePrevClick}>Précédent</button>
+//       }
   
 
-  } else {
+//   } else {
     
-      button2 =<button onClick={handlePrevClick}>Précédent</button>
+//       button2 =<button onClick={handlePrevClick}>Précédent</button>
     
       
-  }
+//   }
   
   return (
       <div>
-      {button2} 
-       {button}
+       {pokemonList.map((pokemon,index) => (
+          <button onClick={() => setPokemonIndex(index)} key={pokemon.name}>{pokemon.name} </button>
+          
+        ))}
       </div>
   );
 }
